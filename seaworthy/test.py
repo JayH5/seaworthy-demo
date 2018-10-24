@@ -21,7 +21,7 @@ class TestDjangoContainer:
         django_logs = django_container.get_logs().decode("utf-8")
         assert "Running migrations" in django_logs
 
-        psql_output = postgresql_container.exec_pg_success(
+        psql_output = postgresql_container.exec_psql(
             ("SELECT COUNT(*) FROM information_schema.tables WHERE "
              "table_schema='public';")).output.decode('utf-8')
 
