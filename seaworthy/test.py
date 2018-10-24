@@ -23,7 +23,7 @@ class TestDjangoContainer:
 
         psql_output = postgresql_container.exec_psql(
             ("SELECT COUNT(*) FROM information_schema.tables WHERE "
-             "table_schema='public';"))
+             "table_schema='public';")).output.decode('utf-8')
 
         count = int(psql_output.strip())
         assert count > 0
