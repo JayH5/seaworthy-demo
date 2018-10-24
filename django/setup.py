@@ -31,7 +31,7 @@ setup(
     long_description=read("README.rst"),
     packages=find_packages(),
     install_requires=[
-        "django >= 1.11, < 2.0",
+        "django >= 1.11.15, < 2.0",
         "django-environ",
     ],
 )
